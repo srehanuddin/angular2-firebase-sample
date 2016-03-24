@@ -33,7 +33,7 @@ System.register(["angular2/platform/browser", "angular2/core", 'angularfire2'], 
                         host: {
                             class: "myClass"
                         },
-                        template: "    \n          \n    "
+                        template: "    \n        <form class=\" ui large form segment\" >\n            \n            <h3 class=\" ui header\" >Add task</h3>\n\n            <div class=\" field\" >\n                <label for=\" title\" >Task: </label >\n                <input name=\" title\" #newTask >\n            </div>\n            \n            <button (click)=\"addTask(newtitle)\" class=\" ui positive right button\" >\n                Add\n            </button>        \n        </form>  \n    "
                     }), 
                     __metadata('design:paramtypes', [angularfire2_1.AngularFire])
                 ], RedditApp);

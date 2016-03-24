@@ -10,7 +10,19 @@ import {Observable} from 'rxjs/Observable';
             class : "myClass"
         },
     template: `    
-          
+        <form class=" ui large form segment" >
+            
+            <h3 class=" ui header" >Add task</h3>
+
+            <div class=" field" >
+                <label for=" title" >Task: </label >
+                <input name=" title" #newTask >
+            </div>
+            
+            <button (click)="addTask(newtitle)" class=" ui positive right button" >
+                Add
+            </button>        
+        </form>  
     `
 })
 class RedditApp {  
