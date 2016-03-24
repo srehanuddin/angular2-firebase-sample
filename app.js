@@ -39,7 +39,7 @@ System.register(["angular2/platform/browser", "angular2/core", 'angularfire2'], 
                 ], App);
                 return App;
             }());
-            browser_1.bootstrap(RedditApp, [
+            browser_1.bootstrap(App, [
                 angularfire2_1.FIREBASE_PROVIDERS,
                 angularfire2_1.defaultFirebase('https://angular2-firebase-sample.firebaseio.com'),
             ]);

@@ -34,7 +34,7 @@ class App {
 
 }
 
-bootstrap(RedditApp, [
+bootstrap(App, [
     FIREBASE_PROVIDERS,
     defaultFirebase('https://angular2-firebase-sample.firebaseio.com'),
 ]);
