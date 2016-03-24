@@ -31,7 +31,7 @@ System.register(["angular2/platform/browser", "angular2/core", 'angularfire2'], 
                 }
                 App.prototype.addTask = function (task) {
                     console.log("Adding article title: " + task.value + " ");
-                    this.tasks.add("task.value");
+                    this.tasks.add(task.value);
                 };
                 App = __decorate([
                     core_1.Component({

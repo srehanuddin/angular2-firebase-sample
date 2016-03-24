@@ -37,7 +37,7 @@ class App {
     
         console.log(`Adding article title: ${task.value} `);
         
-        this.tasks.add("task.value");
+        this.tasks.add(task.value);
 
     }
 }
