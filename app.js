@@ -25,15 +25,21 @@ System.register(["angular2/platform/browser", "angular2/core", 'angularfire2'], 
             }],
         execute: function() {
             App = (function () {
+                //tasks: Observable<any[]>;
                 function App(af) {
+                    this.tasks = af.list('/tasks');
                 }
+                App.prototype.addTask = function (task) {
+                    console.log("Adding article title: " + task.value + " ");
+                    this.tasks.add("task.value");
+                };
                 App = __decorate([
                     core_1.Component({
                         selector: 'app',
                         host: {
                             class: "myClass"
                         },
-                        template: "    \n        <form class=\" ui large form segment\" >\n            \n            <h3 class=\" ui header\" >Add task</h3>\n\n            <div class=\" field\" >\n                <label for=\" title\" >Task: </label >\n                <input name=\" title\" #newTask >\n            </div>\n            \n            <button (click)=\"addTask(newtitle)\" class=\" ui positive right button\" >\n                Add\n            </button>        \n        </form>  \n    "
+                        template: "    \n        <form class=\" ui large form segment\" >\n            \n            <h3 class=\" ui header\" >Add task</h3>\n\n            <div class=\" field\" >\n                <label for=\" title\" >Task: </label >\n                <input name=\" title\" #newTask >\n            </div>\n            \n            <button (click)=\"addTask(newTask)\" class=\" ui positive right button\" >\n                Add\n            </button>        \n        </form>  \n    "
                     }), 
                     __metadata('design:paramtypes', [angularfire2_1.AngularFire])
                 ], App);

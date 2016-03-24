@@ -1,6 +1,6 @@
 import { bootstrap } from "angular2/platform/browser" ;
 import { Component } from "angular2/core" ;
-import {FIREBASE_PROVIDERS, defaultFirebase, AngularFire} from 'angularfire2';
+import {FIREBASE_PROVIDERS, defaultFirebase, AngularFire, FirebaseListObservable} from 'angularfire2';
 import {Observable} from 'rxjs/Observable';
 
 
@@ -19,7 +19,7 @@ import {Observable} from 'rxjs/Observable';
                 <input name=" title" #newTask >
             </div>
             
-            <button (click)="addTask(newtitle)" class=" ui positive right button" >
+            <button (click)="addTask(newTask)" class=" ui positive right button" >
                 Add
             </button>        
         </form>  
@@ -27,11 +27,19 @@ import {Observable} from 'rxjs/Observable';
 })
 class App {  
 
-    items: Observable<any[]>;
+    tasks: FirebaseListObservable<any[]>;
+    //tasks: Observable<any[]>;
     constructor(af: AngularFire){
-           
+        this.tasks = af.list('/tasks');
     } 
+    
+    addTask(task : HTMLInputElement): void {
+    
+        console.log(`Adding article title: ${task.value} `);
+        
+        this.tasks.add("task.value");
 
+    }
 }
 
 bootstrap(App, [
