@@ -10,7 +10,7 @@ import {Observable} from 'rxjs/Observable';
             class : "myClass"
         },
     template: `    
-        <h1>FireBase Sample App</h1>   
+          
     `
 })
 class RedditApp {  

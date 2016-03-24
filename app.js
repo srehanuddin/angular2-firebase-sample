@@ -33,7 +33,7 @@ System.register(["angular2/platform/browser", "angular2/core", 'angularfire2'], 
                         host: {
                             class: "myClass"
                         },
-                        template: "    \n        <h1>FireBase Sample App</h1>   \n    "
+                        template: "    \n          \n    "
                     }), 
                     __metadata('design:paramtypes', [angularfire2_1.AngularFire])
                 ], RedditApp);
