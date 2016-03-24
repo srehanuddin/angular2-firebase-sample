@@ -5,7 +5,7 @@ import {Observable} from 'rxjs/Observable';
 
 
 @Component({
-    selector: 'reddit' ,
+    selector: 'app' ,
         host : {
             class : "myClass"
         },
@@ -25,7 +25,7 @@ import {Observable} from 'rxjs/Observable';
         </form>  
     `
 })
-class RedditApp {  
+class App {  
 
     items: Observable<any[]>;
     constructor(af: AngularFire){

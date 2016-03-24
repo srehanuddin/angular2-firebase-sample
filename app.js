@@ -11,7 +11,7 @@ System.register(["angular2/platform/browser", "angular2/core", 'angularfire2'], 
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var browser_1, core_1, angularfire2_1;
-    var RedditApp;
+    var App;
     return {
         setters:[
             function (browser_1_1) {
@@ -24,20 +24,20 @@ System.register(["angular2/platform/browser", "angular2/core", 'angularfire2'], 
                 angularfire2_1 = angularfire2_1_1;
             }],
         execute: function() {
-            RedditApp = (function () {
-                function RedditApp(af) {
+            App = (function () {
+                function App(af) {
                 }
-                RedditApp = __decorate([
+                App = __decorate([
                     core_1.Component({
-                        selector: 'reddit',
+                        selector: 'app',
                         host: {
                             class: "myClass"
                         },
                         template: "    \n        <form class=\" ui large form segment\" >\n            \n            <h3 class=\" ui header\" >Add task</h3>\n\n            <div class=\" field\" >\n                <label for=\" title\" >Task: </label >\n                <input name=\" title\" #newTask >\n            </div>\n            \n            <button (click)=\"addTask(newtitle)\" class=\" ui positive right button\" >\n                Add\n            </button>        \n        </form>  \n    "
                     }), 
                     __metadata('design:paramtypes', [angularfire2_1.AngularFire])
-                ], RedditApp);
-                return RedditApp;
+                ], App);
+                return App;
             }());
             browser_1.bootstrap(RedditApp, [
                 angularfire2_1.FIREBASE_PROVIDERS,
