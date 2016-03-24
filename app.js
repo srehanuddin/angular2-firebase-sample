@@ -33,13 +33,16 @@ System.register(["angular2/platform/browser", "angular2/core", 'angularfire2'], 
                     console.log("Adding article title: " + task.value + " ");
                     this.tasks.add(task.value);
                 };
+                App.prototype.removeTask = function (id) {
+                    this.tasks.remove(id);
+                };
                 App = __decorate([
                     core_1.Component({
                         selector: 'app',
                         host: {
                             class: "myClass"
                         },
-                        template: "    \n        <form class=\" ui large form segment\" >\n            \n            <h3 class=\" ui header\" >Add task</h3>\n\n            <div class=\" field\" >\n                <label for=\" title\" >Task: </label >\n                <input name=\" title\" #newTask >\n            </div>\n            \n            <button (click)=\"addTask(newTask)\" class=\" ui positive right button\" >\n                Add\n            </button>        \n        </form>  \n    "
+                        template: "    \n        <form class=\" ui large form segment\" >\n            \n            <h3 class=\" ui header\" >Add task</h3>\n\n            <div class=\" field\" >\n                <label for=\" title\" >Task: </label >\n                <input name=\" title\" #newTask >\n            </div>\n            \n            <button (click)=\"addTask(newTask)\" class=\" ui positive right button\" >\n                Add\n            </button>        \n        </form>  \n        \n        <br>\n        <div class=\"ui grid posts\" >\n            \n            <div class=\"ui middle aligned divided list one wide\" style=\"width:100%\">\n                \n                <div *ngFor=\"#item of tasks | async\" class=\"item\">\n                    <div class=\"right floated content\">\n                    <div class=\"ui button\" (click)=\"removeTask( item.$key )\" >Remove</div>\n                    </div>\n                    <div class=\"content\">\n                        {{ item.$value }}\n                    </div>\n                </div>\n                \n              </div>\n        \n        </div>\n    "
                     }), 
                     __metadata('design:paramtypes', [angularfire2_1.AngularFire])
                 ], App);

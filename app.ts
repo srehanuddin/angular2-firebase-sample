@@ -23,6 +23,24 @@ import {Observable} from 'rxjs/Observable';
                 Add
             </button>        
         </form>  
+        
+        <br>
+        <div class="ui grid posts" >
+            
+            <div class="ui middle aligned divided list one wide" style="width:100%">
+                
+                <div *ngFor="#item of tasks | async" class="item">
+                    <div class="right floated content">
+                    <div class="ui button" (click)="removeTask( item.$key )" >Remove</div>
+                    </div>
+                    <div class="content">
+                        {{ item.$value }}
+                    </div>
+                </div>
+                
+              </div>
+        
+        </div>
     `
 })
 class App {  
@@ -40,6 +58,11 @@ class App {
         this.tasks.add(task.value);
 
     }
+    
+    removeTask(id){
+        this.tasks.remove(id);
+    }
+    
 }
 
 bootstrap(App, [
